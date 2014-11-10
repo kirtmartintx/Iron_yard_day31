@@ -1,4 +1,12 @@
 class SweetsController < ApplicationController
+
+  before_action :authenticate_user!
+
+  user_signed_in?
+  current_user
+  user_session
+
+
   before_action :set_sweet, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
