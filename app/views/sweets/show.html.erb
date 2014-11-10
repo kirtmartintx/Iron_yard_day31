@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sweet.name %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @sweet.photo %>
+</p>
+
+<%= link_to 'Edit', edit_sweet_path(@sweet) %> |
+<%= link_to 'Back', sweets_path %>
