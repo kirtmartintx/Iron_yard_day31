@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>My</title>
@@ -12,6 +12,35 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+
+<%= link_to "Home", root_path %>
+<%= link_to "Sweets", sweets_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  Welcome back <%= current_user.email %>!
+<% end %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</div>
 
 </body>
 </html>

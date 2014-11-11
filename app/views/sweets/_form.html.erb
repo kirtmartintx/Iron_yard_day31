@@ -1,4 +1,4 @@
-<%= form_for(@sweet) do |f| %>
+<!-- <%= form_for(@sweet) do |f| %>
   <% if @sweet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sweet.errors.count, "error") %> prohibited this sweet from being saved:</h2>
@@ -22,4 +22,10 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %> -->
+<%= simple_form_for @sweet do |f| %>
+  <%= f.input :name %>
+  <%= f.association :category %>
+  <%= f.input :photo %>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
 <% end %>
